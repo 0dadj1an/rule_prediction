@@ -3,7 +3,7 @@ __credits__ = ["ivosh", "laura"]
 __version__ = "1.0"
 __maintainer__ = "ivo hrbacek"
 __email__ = "ihr@actinet.cz"
-__status__ = "testing code"
+__status__ = "testing"
 
 """
 testing code for finding similarity in FW policy based on numeric data (SRC/DST/PORT)
@@ -137,7 +137,7 @@ def main():
     predicting rule
     """
     predict_rule =[
-        ["192.168.10.0","255.255.255.0", "10.5.2.10", "255.255.255.255", "6", "53", "2"],
+        ["192.168.0.0","255.255.0.0", "10.5.0.0", "255.255.0.0", "6", "53", "1"],
     
     ]
  
@@ -180,6 +180,8 @@ def main():
         index_in_rules=int(dt_bin[0])
         print ("")
         print ("Found same similar rule in both algs, similar rule is:\n{}".format(rules[index_in_rules-1]))
+    else:
+        print ("Different result, decide what alg is better, this need some analytic research")
 
     # print converted
     print ("")
@@ -187,7 +189,7 @@ def main():
     print ("")
     print ("")
     
-    time.sleep(2)
+    time.sleep(1)
     print ("version 2:")
     print ("Print decimal to hex and to binary items:")
 
@@ -207,6 +209,13 @@ def main():
         index_in_rules=int(dt_hex[0]) # remember -1 in list indexing
         print ("")
         print ("Found same similar rule in both algs, similar rule is:\n{}".format(rules[index_in_rules-1]))
+    else:
+        print ("Different result, decide what alg is better, this need some analytic research")
+        
+        
+    print ("")
+    print ("")    
+    print ("Run this use case multiple times, you will see that results may be different every run with same input values!!")
    
 if __name__ == "__main__":
     
